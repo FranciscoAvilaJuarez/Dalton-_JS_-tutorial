@@ -91,13 +91,18 @@ if (num !==  txt) {
 
 //STRICTLY ===,  !== are important, they do make a difference. from the normal !=, ==
 
-
-
 let valor = true
 let balor = true
 let resultado = (valor && balor) // true
 let resultado2 = (valor || balor)
-let resultado = (valor )
+let resultado = (valor)
+alert(resultado)
+
+//concat
+con = 6
+Kat = 9
+conKat = con.concat(Kat)
+alert(conKat)
 
 
 
