@@ -57,12 +57,13 @@ saludo('ale')
 
 // we went from this: 
 const saluder = function(nombra){
-    let fra se = `hola, como estas_${nombra}?`; 
+    let frase = `hola, como estas_${nombra}?`; 
     document.write (frase + '</br>'); 
 }
 saluder ('pedre');        //call it and gives us: hola, como estas_pedre?
 
 
 //to this:      just because the arrow function.
-const saludar = nombre => document.write('hola, como estas_' + nombre + '?' + '</br>'); 
+const saludar = nombre => document.write(`hola, como estas ${nombre}? '</br>'`); 
 saludar ("pedro");        //gives us: hola, como estas_pedro?    
+//if it doesnt work change for 'hola, como estas_' + nombre + '?' + '</br>'
