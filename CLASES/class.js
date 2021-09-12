@@ -13,12 +13,12 @@ class animal {
     verInfo(){
         document.write(this.info);
     }
+    
 }
 // SE LLAMA FUNCION AFUERA, const saludar =()=>{ alert  } 
 
-
-let perro = new animal( prompt('cual es su nombre?'), 'husky',10 , 'bonito' ); 
-let gato = new animal( 'garfield', 'fat', prompt('cuanto años tiene?'), 'stripped meow' ); 
+let perro = new animal( prompt('cual es su nombre?'), 'perro',10 , 'bonito' ); 
+let gato = new animal( 'garfield', 'gato', prompt('cuanto años tiene?'), 'stripped meow' ); 
 let pajaro = new animal( 'heloo', 'cotorro', 3, prompt('cual es su color?') ); 
 
 
