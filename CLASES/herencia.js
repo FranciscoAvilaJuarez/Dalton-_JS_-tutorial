@@ -1,39 +1,49 @@
 
-class animal {
-    constructor(nombre, especie, edad, color){
+//      CLASSES CAN     N   O   T     HAVE THE SAME     N   A   M   E   
+// ejempl0
+//        class ANIMAL
+//                    and
+//                       let ANIMAL = x
+
+class ANIMAL {      //open ANIMALC
+    constructor(nombre, especie, edad, color){      //passing values. 
         this.name = nombre; 
         this.raza = especie;  
-        this.edad = parseInt(edad);
+        this.edad = parseInt(edad);     //passes a number
         this.color = color;
         this.info = `me llamo ${this.name} soy un ${this.raza} con ${this.edad}yrs de color ${this.color}<br>`; 
     }
-    verInfo(){
-        document.write(this.info);
-    }
-    
-}
-// SE LLAMA FUNCION AFUERA, const saludar =()=>{ alert  } 
+    verInfo(){      //open METODO to see info 
+        document.write(this.info + "<br>");
+    }       //close METODO to see info 
+}       //close ANIMALC
 
 
-let perro = new animal( prompt('cual es su nombre?'), 'perro',10 , 'bonito' ); 
-let gato = new animal( 'garfield', 'gato', prompt('cuanto años tiene?'), 'stripped meow' ); 
-let bird = new animal( 'heloo', 'bird', 3, prompt('cual es su color?') ); 
+//  H   E   R   E   N   C   I   A       primero va la NUEVA y DESPEUES de donde viene. 
+class PERRO extends ANIMAL {        //open PC E A
+    constructor( nombre, especie, edad, color, size ){        //open cons
+        super( nombre, especie, edad, color, size ); 
+        this.tamaño = size; 
+    }//close cons
+    ladrar(){       //open ladrarF
+        document.write('yo si ladro'); 
+    }//ladrarF
+}//close PC E A
 
 
-/*
-            TODO ESTO SE PUEDE HACER 
-document.write (perro.raza, '<br>');        //resultado husky
-document.write (perro.especie, '<br>');     //resultado undefined
-document.write(perro.info, '<br>'); 
-document.write(gato.info, '<br>'); 
-document.write(bird.info, '<br>');
-*/
-//      con esto 'perro.verInfo();' y 'verInfo(){document.write(this.info)}'
+
+//enters values. 
+let perro = new PERRO( 'osito', 'perro', 10, 'negro', 'grande' );      //grande is the herencia
+let gato = new ANIMAL( 'garfield', 'gato', 5, 'stripped meow orange' ); 
+let bird = new ANIMAL( 'heloo', 'bird', 3, 'green' ); 
+
+
+// con esto ves:
+//              me llamo ${this.name} soy un ${this.raza} con ${this.edad}yrs de color ${this.color}
 perro.verInfo(); 
 gato.verInfo(); 
 bird.verInfo(); 
 
-//      polimorfismo  ALMOST same info, diferent resutado.  
-perro.ladrar(); 
-gato.ladrar();
-bird.ladrar(); 
+
+//      yo si ladro     probando HERENCIA
+perro.ladrar();      
