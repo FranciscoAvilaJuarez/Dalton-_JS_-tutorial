@@ -1,14 +1,23 @@
 /*
 *show CELLPHONE CHAR of 3
-*color, display, OS, camara, memoria interna, RAM6 (1)
+*model, color, display, OS, camera, memoria, ram
 *have to turn on, restart, take pictures y record. 
 
 add already existing options from (1) onto new phones having more better options, 
-*face recon, record slowmo, extra camera, RAM8 and RAM12
-*Enabled by TrueDepth camera for facial recognition
-*slowMo: 1080p slow motion recording 960fps
-*Side-mounted fingerprint sensor
+*security, slowmoRecord, size, RAM
+
+NEW
+*security: 
+        *faceSecurity: TrueDepth camera for facial recognition
+        IF Xiaomi 10T 5G + faceSecurity
+        *fingerprintSecurity: Side-mounted sensor
+*slowmoRecord: 1080p slow motion recording 960fps
 *size = 165.1mm 
+
+CHANGE
+*RAM: 8 and 12
+
+
 
 apps of 4 apps
 *crear prog to decide which app to download. 
@@ -35,38 +44,147 @@ Xiaomi 10T 5G
     OS: Qualcomm® Snapdragon™ 865, 
     camera: 108MP
     memoria: 256GB, 
-    
-Samsung Galaxy S21 Ultra
-    color: black, 
-    display: 6.8‑inch Dynamic AMOLED 2x, 
-    OS: Octa-Core 2.9 GHz, 
-    camera: 40 MP, 
-    memoria: 128GB
+
 */
 
-class cells {       //open cell
-    constructor(color, display, OS, camera, memoria, ram){      //open polin
+class CELLPHONE {       //open CELLPHONE-class
+    constructor(model, color, display, OS, camera, memoria, ram) {      //open cells-constructor
+        this.model = model;
         this.color = color; 
         this.display = display; 
         this.OS = OS; 
         this.camera = camera; 
         this.memoria = memoria; 
-        this.ram = ram 
-        this.on = false; 
-    }//close polin
-    turn_on(){      //open on 
-            if (this.on == false){      //open if-on
-                alert ('this is turned on'); 
-                on = true; 
-            }//close if-on
-            else { alert('the cell is already on...'); }//else if-on
-    }//close on
-    turn_off(){     //open off
-        if (this.on == true){       //open if-off
-            alert ('turned off'); 
-            on == false; 
-        }//close if-of
-        else { alert('the cell is already off')};//else if-off  
-    }//close off
-}//close cell
+        this.ram = ram;
+        
+        this.power = false; 
+    }//close cells-constructor
 
+    powerButton() {      //open powerButton
+        if (this.power == false){      
+            alert ('turn celphone on'); 
+            this.power = true; 
+        }
+        else{ alert( this.model +' is already off' ) };
+    }//close powerButton
+
+    restart() {     //open restart
+        if(this.power == true){
+            alert('reiniciando'); 
+            this.power = false;//turn off
+            this.power = true; //turn BACK ON
+        }else{ alert( this.model +' is already off' ) }
+    }//close restart
+
+    takePicture() {      //open takePicture
+        if (this.power == true){
+            alert (`foto tomada en una resoucion de ${this.camera}MP`)
+        }
+    }//close takePicture
+
+    grabar() {       //open grabar
+        if(this.power == true){
+            alert(`video grabado con camara ${this.camera}MP`)
+        }
+    }//close grabar
+
+    showInfo() {        //open showInfo
+        return `Tech Specs for <b>${this.model}: </b><br>    
+                color: <b>${this.color} </b><br>
+                display: <b>${this.display} </b><br>
+                OS: <b>${this.OS} </b><br>
+                camara: <b>${this.camera}MP </b><br>
+                memoria interna: <b>${this.memoria}GB </b><br>
+                RAM: <b>${this.ram}MB </b><br>`;
+    }//close showInfo
+}//close CELLPHONE-class
+
+
+//open new class UPGRADES to add new options 'security, slowmoRecord, size,' and change 'RAM'
+// security, slowmoRecord, size, RAM
+class UPGRADES extends CELLPHONE {       //open class-UPGRADES
+    constructor( model, color, display, OS, camera, memoria, ram, security, slowmoRecord, size, power ){//open cons
+        super( model, color, display, OS, camera, memoria, ram, power ); 
+
+        this.security = security; 
+        this.slowmoRecord = slowmoRecord; 
+        this.size = size; 
+    }//close cons
+
+    set setRAM (newRAM){        //open setRam
+        this.ram = newRAM; 
+    }//close setRam
+
+    seguridad() {       //open seguridad-method
+        powerButton();
+        if (this.power == true){
+            alert `UG recognzing face with: ${this.security}`
+        }
+        else { alert('failed to recon, try again') };
+    }//close seguridad-method
+
+    grabarLento() {     //open grabarLento-method
+        powerButton();
+        if( this.power == true ) {      //open if-lento
+            alert (`UG estas grabando con camara de: ${this.slowmoRecord}`);
+        }//close if-lento
+        else { ( alert('turn device on') )};
+    }//close grabarLento-method
+
+    cellUpgrade() {     //open cellUpgrade
+        return this.showInfo() + ` UG seguridad: <b>${this.security}</b><br>
+        UG resolucion de camara lenta <b>${this.slowmoRecord}</b><br>
+        UG tamaño: <b>${this.size}</b><br>`; 
+    }//close cellUpgrade
+
+}//close class-UPGRADES
+
+
+// add values 
+//              model, color, display, OS, camera, memoria, ram
+let cell1 = new CELLPHONE( 'Apple iPhone 12', 'Graphite', '6.7‑inch OLED display', 'A14 Bionic chip Neural Engine', 'Pro 12', '512', '6' );
+
+let cell2 = new CELLPHONE( 'Samsung Galaxy Z Fold 2', 'Bronze', '120Hz, 7.6 Dynamic AMOLED 2x', 'Octa-Core 3.09 GHz', '10', '256', '6' );
+
+let cell3 = new CELLPHONE( 'Xiaomi 10T 5G', 'Negro Cósmico', '144Hz 6.67‑inch DotDisplay', 'Qualcomm Snapdragon 865', '108', '256', '6' );
+
+
+/*
+//call 
+cell1.powerButton();//power on
+cell1.takePicture();//take picture
+cell1.restart();//reboot
+cell1.grabar(); //record
+cell1.powerButton();//power off
+*/
+
+
+//to  show info
+//              gets call it this way, as we use 'return' in 'showInfo ()' 
+document.write(` 
+    ${cell1.showInfo()} <br>
+    ${cell2.showInfo()} <br>
+    ${cell3.showInfo()} <br>
+`); 
+
+
+
+cell2 = new UPGRADES('8', 'TrueDepth camera for facial recognition', '1080p slow motion recording 960fps', '165.1mm'); 
+
+cell3 = new UPGRADES( 'Xiaomi 10T 5G', 'Negro cósmico', '144Hz 6.67‑inch DotDisplay', 'Qualcomm Snapdragon 865', '108', '256', '12', 'fingerprintSecurity: Side-mounted sensor',  '1080p slow motion recording 960fps', '165.1mm' );
+
+
+
+document.write ( `
+    ${cell2.cellUpgrade()} <br>
+    ${cell3.cellUpgrade()} <br>
+`)
+
+
+cell2.powerButton();//power on
+cell2.takePicture();//take picture
+cell2.restart();//reboot
+cell2.grabar(); //record
+cell2.powerButton();//power off 
+cell3.seguridad();
+cell3.grabarLento();

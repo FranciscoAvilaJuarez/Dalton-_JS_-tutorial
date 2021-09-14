@@ -21,7 +21,7 @@ class ANIMAL {      //open ANIMALC
 
 //  H   E   R   E   N   C   I   A       primero va la NUEVA y DESPEUES de donde viene. 
 class PERRO extends ANIMAL {        //open PC E A
-    constructor( nombre, especie, edad, color, size ){        //open cons
+    constructor( nombre, especie, edad, color, size ){        //open cons   changing value to 'size'
         super( nombre, especie, edad, color, size ); 
         this.tamaño = size; 
     }//close cons
