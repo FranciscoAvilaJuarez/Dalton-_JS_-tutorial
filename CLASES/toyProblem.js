@@ -17,13 +17,6 @@ NEW
 CHANGE
 *RAM: 8 and 12
 
-
-
-apps of 4 apps
-*crear prog to decide which app to download. 
-*shows how many downloads, and weight, 
-*have to be able to install/unistall and open/close
-
 Apple iPhone 12.
     color: Graphite, 
     display: 6.7‑inch OLED display,
@@ -62,30 +55,34 @@ class CELLPHONE {       //open CELLPHONE-class
 
     powerButton() {      //open powerButton
         if (this.power == false){      
-            alert ('turn celphone on'); 
+            alert ( `turnnig ${this.model} powerButton-on` ); 
             this.power = true; 
         }
-        else{ alert( this.model +' is already off' ) };
+        else if (this.power == true){
+            alert(`${this.model} powerButton-is already on`)
+        }
+        else{ alert( this.model +' powerButton-is already off' ) };
     }//close powerButton
 
     restart() {     //open restart
         if(this.power == true){
-            alert('reiniciando'); 
+            alert(`Reiniciando ${this.model}`); 
             this.power = false;//turn off
             this.power = true; //turn BACK ON
-        }else{ alert( this.model +' is already off' ) }
+        }else{ alert( this.model +' restart-is already off' ) }
     }//close restart
 
     takePicture() {      //open takePicture
         if (this.power == true){
-            alert (`foto tomada en una resoucion de ${this.camera}MP`)
+            alert (`${this.model} Foto tomada en una resolucion de ${this.camera}MP`)
         }
+        else { alert (`${this.model} is takePicture-turned off`)} 
     }//close takePicture
 
     grabar() {       //open grabar
         if(this.power == true){
-            alert(`video grabado con camara ${this.camera}MP`)
-        }
+            alert(`${this.model} video grabado con camara ${this.camera}MP`)
+        }else{ alert( this.model +' is grabar-turned off' ) }
     }//close grabar
 
     showInfo() {        //open showInfo
@@ -95,7 +92,7 @@ class CELLPHONE {       //open CELLPHONE-class
                 OS: <b>${this.OS} </b><br>
                 camara: <b>${this.camera}MP </b><br>
                 memoria interna: <b>${this.memoria}GB </b><br>
-                RAM: <b>${this.ram}MB </b><br>`;
+                RAM: <b>${this.ram}MB </b><br><br>`;
     }//close showInfo
 }//close CELLPHONE-class
 
@@ -119,21 +116,19 @@ class UPGRADES extends CELLPHONE {       //open class-UPGRADES
     }//close setRam
 
     Cellseguro() {       //open seguridad-method
-        if (this.power == true){
-            alert ( `UG recognzing face with: ${this.seguridad}` )
+        if (this.power == false){
+            this.power = true;
+            alert ( `${this.model} UG recognzing face with: ${this.seguridad}` )
         }
-        else {
-            this.power == true; 
-        }
+        else { alert ( `${this.model}UG recognzing face with: ${this.seguridad}`)}
     }//close seguridad-method
 
     GrabarLento(){     //open grabarLento-method
-        if( this.power == true ) {      //open if-lento
-            alert (`UG estas grabando con camara de: ${this.slowmoRecord}`);
-        }//close if-lento
-        else { 
+        if( this.power == false ) {      //open if-lento
             this.power = true;
-        }
+            alert (`${this.model} UG estas grabando con camara de: ${this.slowmoRecord}`);
+        }//close if-lento
+        else { alert( `${this.model} UG estas grabando con camara de: ${this.slowmoRecord}` ) }
     }//close grabarLento-method
 
     CellUpgrade() {     //open cellUpgrade
@@ -152,7 +147,6 @@ let cell1 = new CELLPHONE( 'Apple iPhone 12', 'Graphite', '6.7‑inch OLED displ
 let cell2 = new CELLPHONE( 'Samsung Galaxy Z Fold 2', 'Bronze', '120Hz, 7.6 Dynamic AMOLED 2x', 'Octa-Core 3.09 GHz', '10', '256', '6' );
 
 let cell3 = new CELLPHONE( 'Xiaomi 10T 5G', 'Negro Cósmico', '144Hz 6.67‑inch DotDisplay', 'Qualcomm Snapdragon 865', '108', '256', '6' );
-
 
 /*
 //call 
@@ -173,23 +167,43 @@ document.write(`
 `); 
 
 
-
+// new added features only to cell2 and 3 
 cell2 = new UPGRADES('Samsung Galaxy Z Fold 2', 'Bronze', '120Hz, 7.6 Dynamic AMOLED 2x', 'Octa-Core 3.09 GHz', '10', '256', '8', '1080p slow motion recording 960fps', 'TrueDepth camera for facial recognition', '165.1mm'); 
 
 cell3 = new UPGRADES( 'Xiaomi 10T 5G', 'Negro cósmico', '144Hz 6.67‑inch DotDisplay', 'Qualcomm Snapdragon 865', '108', '256', '12', '1080p slow motion recording 960fps',  'TrueDepth camera for facial recognition', '165.1mm' );
 
 
-
+/*
 document.write ( `
+    ${cell1.showInfo()} <br>
     ${cell2.CellUpgrade()} <br>
     ${cell3.CellUpgrade()} <br>
 `)
+*/
 
+//cell1
+cell1.powerButton();//power on
+cell1.takePicture();//take picture
+cell1.restart();//reboot
+cell1.grabar(); //record
+//cell1.GrabarLento();//doesnt work. doesnt exist 
+//cell1.Cellseguro();//doesnt work, doesnt exist 
+cell1.powerButton();//power off 
 
+//cell2
 cell2.powerButton();//power on
 cell2.takePicture();//take picture
-cell1.restart();//reboot
+cell2.restart();//reboot
 cell2.grabar(); //record
-cell2.powerButton();//power off 
-cell3.GrabarLento();
+cell2.Cellseguro();
+cell2.GrabarLento(); 
+cell2.powerButton();//power off
+
+//cell3
+cell3.powerButton();//power on
+cell3.takePicture();//take picture
+cell3.restart();//reboot
+cell3.grabar(); //record
 cell3.Cellseguro();
+cell3.GrabarLento(); 
+cell3.powerButton();//power off
