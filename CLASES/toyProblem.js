@@ -4,13 +4,13 @@
 *have to turn on, restart, take pictures y record. 
 
 add already existing options from (1) onto new phones having more better options, 
-*security, slowmoRecord, size, RAM
+*seguridad, slowmoRecord, size, RAM
 
 NEW
-*security: 
-        *faceSecurity: TrueDepth camera for facial recognition
-        IF Xiaomi 10T 5G + faceSecurity
-        *fingerprintSecurity: Side-mounted sensor
+*seguridad: 
+        *faceSeguridadseguridad: TrueDepth camera for facial recognition
+        IF Xiaomi 10T 5G + faceSeguridadseguridad
+        *fingerprintSeguridadseguridad: Side-mounted sensor
 *slowmoRecord: 1080p slow motion recording 960fps
 *size = 165.1mm 
 
@@ -100,39 +100,44 @@ class CELLPHONE {       //open CELLPHONE-class
 }//close CELLPHONE-class
 
 
-//open new class UPGRADES to add new options 'security, slowmoRecord, size,' and change 'RAM'
-// security, slowmoRecord, size, RAM
+//open new class UPGRADES to add new options 'seguridad, slowmoRecord, size,' and change 'RAM'
+// seguridad, slowmoRecord, size, RAM
 class UPGRADES extends CELLPHONE {       //open class-UPGRADES
-    constructor( model, color, display, OS, camera, memoria, ram, security, slowmoRecord, size, power ){//open cons
+    
+    constructor( model, color, display, OS, camera, memoria, ram, slowmoRecord, seguridad, size, power ){//open cons
         super( model, color, display, OS, camera, memoria, ram, power ); 
+            
+            this.slowmoRecord = slowmoRecord; 
+            this.seguridad = seguridad; 
+            this.size = size; 
 
-        this.security = security; 
-        this.slowmoRecord = slowmoRecord; 
-        this.size = size; 
+            this.power == true;
     }//close cons
 
     set setRAM (newRAM){        //open setRam
         this.ram = newRAM; 
     }//close setRam
 
-    seguridad() {       //open seguridad-method
-        powerButton();
+    Cellseguro() {       //open seguridad-method
         if (this.power == true){
-            alert `UG recognzing face with: ${this.security}`
+            alert ( `UG recognzing face with: ${this.seguridad}` )
         }
-        else { alert('failed to recon, try again') };
+        else {
+            this.power == true; 
+        }
     }//close seguridad-method
 
-    grabarLento() {     //open grabarLento-method
-        powerButton();
+    GrabarLento(){     //open grabarLento-method
         if( this.power == true ) {      //open if-lento
             alert (`UG estas grabando con camara de: ${this.slowmoRecord}`);
         }//close if-lento
-        else { ( alert('turn device on') )};
+        else { 
+            this.power = true;
+        }
     }//close grabarLento-method
 
-    cellUpgrade() {     //open cellUpgrade
-        return this.showInfo() + ` UG seguridad: <b>${this.security}</b><br>
+    CellUpgrade() {     //open cellUpgrade
+        return this.showInfo() + ` UG seguridad: <b>${this.seguridad}</b><br>
         UG resolucion de camara lenta <b>${this.slowmoRecord}</b><br>
         UG tamaño: <b>${this.size}</b><br>`; 
     }//close cellUpgrade
@@ -169,22 +174,22 @@ document.write(`
 
 
 
-cell2 = new UPGRADES('8', 'TrueDepth camera for facial recognition', '1080p slow motion recording 960fps', '165.1mm'); 
+cell2 = new UPGRADES('Samsung Galaxy Z Fold 2', 'Bronze', '120Hz, 7.6 Dynamic AMOLED 2x', 'Octa-Core 3.09 GHz', '10', '256', '8', '1080p slow motion recording 960fps', 'TrueDepth camera for facial recognition', '165.1mm'); 
 
-cell3 = new UPGRADES( 'Xiaomi 10T 5G', 'Negro cósmico', '144Hz 6.67‑inch DotDisplay', 'Qualcomm Snapdragon 865', '108', '256', '12', 'fingerprintSecurity: Side-mounted sensor',  '1080p slow motion recording 960fps', '165.1mm' );
+cell3 = new UPGRADES( 'Xiaomi 10T 5G', 'Negro cósmico', '144Hz 6.67‑inch DotDisplay', 'Qualcomm Snapdragon 865', '108', '256', '12', '1080p slow motion recording 960fps',  'TrueDepth camera for facial recognition', '165.1mm' );
 
 
 
 document.write ( `
-    ${cell2.cellUpgrade()} <br>
-    ${cell3.cellUpgrade()} <br>
+    ${cell2.CellUpgrade()} <br>
+    ${cell3.CellUpgrade()} <br>
 `)
 
 
 cell2.powerButton();//power on
 cell2.takePicture();//take picture
-cell2.restart();//reboot
+cell1.restart();//reboot
 cell2.grabar(); //record
 cell2.powerButton();//power off 
-cell3.seguridad();
-cell3.grabarLento();
+cell3.GrabarLento();
+cell3.Cellseguro();
