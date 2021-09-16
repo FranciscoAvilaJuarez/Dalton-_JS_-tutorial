@@ -20,9 +20,30 @@ document.write (resultadoStart2_1 + '<br>');//shows 'FALSE'
 
 */
 //      declare endsWithS
-searchyEnd = 'a'; 
-let resultado = cadena.endsWith(searchyEnd); 
+document.write('JS test'); 
+let caden = 'cadena de prueba'
+let searchyEnd = 'prueba';
+let resultad = caden.endsWith(searchyEnd); 
 
 
 //      show endsWithS
-document.write = (resultado); 
+//document.write = (resultad); did not show 'true'
+//console.log = (resultad); did not show 'true'
+alert(`'cadena de prueba' ends with 'prueba' : ${resultad}`); // only one that showed 'true' in promt 
+
+
+//      test two 
+
+let cadenaMoona = 'company moona'; 
+let endMoona = 'moona'; 
+let cadenaRis = 'pater comunitaris'
+let endRis = 'comunitaris'; 
+
+let showMoona = cadenaMoona.endsWith(endMoona); 
+alert('company moona ends with moona : ' + showMoona);//shows true
+
+let showRis = cadenaRis.endsWith(endMoona); 
+alert(cadenaRis + ' ends with ' + endMoona + ' : '  + showRis);//shows FALSE as cadenaRis ends with 'comunitaris'
+
+let showRis1 = cadenaRis.endsWith(endRis); 
+alert(`'${cadenaRis}'_ends with_'${endRis}'_:_${showRis1}`);//shows 'true'
