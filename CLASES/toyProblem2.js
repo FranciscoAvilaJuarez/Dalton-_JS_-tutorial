@@ -5,12 +5,13 @@
 *have to be able to install/unistall and open/close
 */
 
+//create class Applicacion
 class Applicacion {//open App-class 
-    constructor(nombre,descargas, puntuacion, peso){//open conS
+    constructor(nombre, descargas, puntuacion, peso){//open conS
         this.nombre = nombre;
-        this.descargas = descargas + ' usuarios'; 
-        this.puntuacion = puntuacion + ' estrellas'; 
-        this.peso = peso + 'Kb'; 
+        this.descargas = descargas + ' Usuarios';
+        this.puntuacion = puntuacion + ' Estrellas';
+        this.peso = peso + ' Kb';
 
         this.iniciada = false; 
         this.instalada = false; 
@@ -20,7 +21,7 @@ class Applicacion {//open App-class
     instalar(){
         if(this.instalada == false){
             this.instalada = true; 
-            alert ( `${this.nombre} 1 instalar-esta instalada`)
+            alert ( `App ${this.nombre} esta instalada`)
         }//close if
     };//close instalar
 
@@ -28,7 +29,7 @@ class Applicacion {//open App-class
     abrir(){
         if (this.iniciada == false && this.instalada == true ){
             this.iniciada = true; 
-                alert(`${this.nombre} 2 abrir-esta abierta`); 
+                alert(`App ${this.nombre} esta abierta`); 
         }//close if 
     };//close abrir
 
@@ -36,7 +37,7 @@ class Applicacion {//open App-class
     cerrar(){
         if( this.iniciada == true && this.instalada == true ){
             this.iniciada == false; 
-            alert(`${this.nombre} 3 cerrar-esta cerrada`); 
+            alert(` App ${this.nombre} esta cerrada`); 
         }//close if
     }//close cerrar
 
@@ -44,23 +45,56 @@ class Applicacion {//open App-class
     desinstalar(){
         if(this.instalada == true){
             this.instalada == false; 
-            alert(`${this.nombre} 4 desinstalar-esta desInstalada`)
+            alert(`App ${this.nombre} esta desInstalada`)
         }//close if
     };//close desinstalar
-};//close App-class
+
+    //show info
+    showInfo(){
+        return `<b>
+                App:  ${this.nombre}<br>
+                Descargas: ${this.descargas}<br>
+                Rate: ${this.puntuacion}<br>
+                Peso ${this.peso}<br>
+                </b>`;  
+    }//close showInfo
+};//close Applicacion-class
 
 
-//      nombre,descargas, puntuacion, peso
-let app = new Applicacion('istagram', '90', '8', '950' ); 
+//      give nombre,descargas, puntuacion, peso
+let app = new Applicacion('insta', '90', '8', '950' ); 
+let app2 = new Applicacion('facebok', '150', '9', '1050')
 
 
-//call app
+//      make more apps to compare
+//                      nombre, descargas, puntuacion, peso
+let app3 = new Applicacion('tok-tik', '300', '6.9', '700'); 
+let app4 = new Applicacion('WaSSup', '1000', '8.9', '300'); 
+let app5 = new Applicacion('Massenger', '989', '7.9', '600');
+
+//  call app1 to do 'X' 
 app.instalar();
 app.abrir();
- app.cerrar();
-app.desinstalar();  
+app.cerrar();
+app.desinstalar(); 
+
+//  call app5 to do 'X' 
+app5.instalar();
+app5.abrir();
+app5.cerrar();
+app5.desinstalar(); 
 
 
+//  show apps information 
+document.write (` 
+    ${app.showInfo()}<br>
+    ${app2.showInfo()}<br>
+    ${app3.showInfo()}<br>
+    ${app4.showInfo()}<br>
+    ${app5.showInfo()}<br>
+`);
+
+ 
 
 
 
