@@ -14,10 +14,6 @@
 
 *concat() takes two or more and gives result ('resultado = concat('hola', 'juan')' = hola juan?)
 
-*padStart()
-*padEnd()
-*repeat()
-
 *split()
 *subString()
 *toLowerCase()

@@ -50,4 +50,19 @@ we add ${colchonFIn} to ${numero} using 14 spaces with <b>'padEnd' : '${colchonF
 
 
 //              repeat() 
+//declare
+let repite = '_123'; 
+//assign 
+let repiteNum = repite.repeat(5);// repite cinco veces '123'
+//show : _123_123_123_123_123
+document.write('<b>'+repiteNum+'</b>' + '<br>'); 
 
+//what shows is: numeros '_123' se repiten cinco veces con repeat : '_123_123_123_123_123'
+document.write( ` numeros '${repite}' se repiten cinco veces con <b>repeat</b> : '<b>${repiteNum}</b>' <br>` )
+
+
+
+
+
+
+//document.write('JS test, padStart;' + '<br>');
