@@ -1,4 +1,4 @@
-/*              chain methods
+/*              chain method padStart()
 *padStart()
 *padEnd()
 *repeat()
