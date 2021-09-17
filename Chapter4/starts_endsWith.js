@@ -19,31 +19,76 @@ document.write (resultadoStart2 + '<br>');//shows 'true'
 document.write (resultadoStart2_1 + '<br>');//shows 'FALSE' 
 
 */
-//      declare endsWithS
+//      endsWithS
 document.write('JS test'); 
 let caden = 'cadena de prueba'
-let searchyEnd = 'prueba';
-let resultad = caden.endsWith(searchyEnd); 
-
+let searchEnd = 'prueba';
 
 //      show endsWithS
 //document.write = (resultad); did not show 'true'
 //console.log = (resultad); did not show 'true'
-alert(`'cadena de prueba' ends with 'prueba' : ${resultad}`); // only one that showed 'true' in promt 
-
+let resultad = caden.endsWith(searchEnd); 
+alert( ` '${caden}'_ends with_'${searchEnd}'_:_'${resultad}' ` ); // only one that showed 'true' in promt 
 
 //      test two 
-
 let cadenaMoona = 'company moona'; 
 let endMoona = 'moona'; 
-let cadenaRis = 'pater comunitaris'
+let cadenaRis = 'pater comunitaris comunitaris'
 let endRis = 'comunitaris'; 
 
+
+//          endsWith()      **note only provides true or false
 let showMoona = cadenaMoona.endsWith(endMoona); 
-alert('company moona ends with moona : ' + showMoona);//shows true
+alert( cadenaMoona + '_ends with_' + endMoona + '_:_' + showMoona );//shows true
 
 let showRis = cadenaRis.endsWith(endMoona); 
-alert(cadenaRis + ' ends with ' + endMoona + ' : '  + showRis);//shows FALSE as cadenaRis ends with 'comunitaris'
+alert( cadenaRis + '_ends with_' + endMoona + '_:_' + showRis );//shows FALSE as cadenaRis ends with 'comunitaris'
 
 let showRis1 = cadenaRis.endsWith(endRis); 
-alert(`'${cadenaRis}'_ends with_'${endRis}'_:_${showRis1}`);//shows 'true'
+alert( `'${cadenaRis}'_ends with_'${endRis}'_:_'${showRis1}'` );//shows 'true'
+
+
+
+//          includes()   the search is anywhere with in them param. 
+let incluye = cadenaMoona.includes(endMoona); 
+alert(`'${cadenaMoona}' includes '${endMoona}'_:_'${incluye}'`);//shows true
+
+let incluyeRis = cadenaRis.includes(endMoona); 
+alert(`'${cadenaRis}' includes '${endMoona}'_:_'${incluyeRis}'`)//shows false as previous example
+
+
+
+//          indexOf()  **counts from zero 
+let showIndexOf = cadenaMoona.indexOf(endMoona); 
+alert(`la palabra '${endMoona}' en '${cadenaMoona}' empieza con letra '${cadenaMoona[8]}' en '${showIndexOf}vo' lugar`);//shows 8vo lugar  
+alert(cadenaMoona[8]);//shows 'm' same as cadenaMoona.indexOf(endMoona) but in number 
+
+let showIndexOfPC = cadenaRis.indexOf(endRis); 
+// shows:la palabra 'comunitaris' en 'pater comunitaris' empieza con la letra 'c' en el '6to lugar'
+alert (` la palabra '${endRis}' en '${cadenaRis}' empieza con letra '${cadenaRis[6]}' en '${showIndexOfPC}to lugar' `);
+
+alert(cadenaRis[6]);//shows 'c' same as 'cadenaRis.indexOf(endRis)' but in number 
+
+//          to get index of                 **note result of '-1' is the result of zero finds
+//                          shows the index of 'comunitaris' in 'pater comunitaris' es '6'
+let risIndex = cadenaRis.indexOf(endRis)
+alert (risIndex); //shows '6'
+alert (`the index of '${endRis}' in '${cadenaRis}' es '${risIndex}'`);//
+
+
+
+//          lastIndexOf()       shows last index of
+let risLastIndex = cadenaRis.lastIndexOf(endRis); 
+//shows ' the L  ast index of 'comunitaris' in 'pater comunitaris comunitaris' es : '18' '
+alert(` the L ast index of '${endRis}' in '${cadenaRis}' es : '${risLastIndex}'`);
+
+alert( `
+    la primera letra con la que empieza '${endRis}'
+    en donde '${endRis}' aparece por ultima vez en '${cadenaRis}' 
+    es : '${cadenaRis[18]}' en el last index : '${risLastIndex}'
+`);//shows 'c' 
+
+
+//to conplete indexes
+alert (endMoona[0] + endMoona[1] + endMoona[2] + endMoona[3] + endMoona[4]);// shows ' moona '
+alert (` '${endMoona[0]}${endMoona[1]}${endMoona[2]}${endMoona[3]}${endMoona[4]}' `);// shows  'moona' 

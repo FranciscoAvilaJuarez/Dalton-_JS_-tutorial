@@ -13,10 +13,6 @@
     chain method
 
 *concat() takes two or more and gives result ('resultado = concat('hola', 'juan')' = hola juan?)
-*starts/endsWith()
-*includes()
-*indexOf()
-*lastIndexOf()
 
 *padStart()
 *padEnd()
