@@ -1,4 +1,4 @@
-document.write('JS test, padStart;' + '<br>'+'<br>'+'<br>'); 
+ document.write('JS test, padStart;' + '<br>'+'<br>'+'<br>'); 
 /*              chain method padStart()
 *padStart()
 *padEnd()

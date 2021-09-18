@@ -14,7 +14,7 @@
 
 *concat() takes two or more and gives result ('resultado = concat('hola', 'juan')' = hola juan?)
 
-*split()
+*
 *subString()
 *toLowerCase()
 *toUpperCase()
