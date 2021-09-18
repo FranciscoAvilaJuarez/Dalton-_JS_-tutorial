@@ -51,6 +51,9 @@ let resultSUbString = chaiSubString.substring(0, 5);// (0,5) is start and end. i
 document.write(`${resultSUbString} <br>`);// abcde
 console.log(resultSUbString[6]); //undefined. so fg doesnt exist
 
+
+
+//              *toLowerCase()*toUpperCase() 
 let toLowerCaseChain = 'PACO ES DE MEXICO'; 
 let toUpperCaseChain = 'paco quiere ser de canada'; 
 let toLowerCaseChainResult = toLowerCaseChain.toLowerCase (); 
@@ -59,4 +62,17 @@ document.write(`donde estoy : ${toLowerCaseChainResult} vs/ `);
 document.write(`donde quiero estar : ${toUpperCaseChainResult} <br>`); 
 
 
+
+let toStringChain = 50; 
+let toStringResultado = toStringChain.toString(); 
+document.write(`number 50 converted to string + number 2 ${toStringChain}` + 2 );// string 502 
+
+
+
+/*
+//              *trim()
+let trimChain = ''; 
+let trimChainResult = trimChain.trim(); 
+document.write = (trimChainResult); 
+*/
  
