@@ -45,7 +45,18 @@ console.log(`${spliResultado[3]}<br>`);//console.logs: the word Array<br>
 
 
 
-//              *subString()
+//              *substring() cuts the string you have to where you tell it to cut it START/END
+let chaiSubString = 'abcdefg';
+let resultSUbString = chaiSubString.substring(0, 5);// (0,5) is start and end. if only one number is the start
+document.write(`${resultSUbString} <br>`);// abcde
+console.log(resultSUbString[6]); //undefined. so fg doesnt exist
+
+let toLowerCaseChain = 'PACO ES DE MEXICO'; 
+let toUpperCaseChain = 'paco quiere ser de canada'; 
+let toLowerCaseChainResult = toLowerCaseChain.toLowerCase (); 
+let toUpperCaseChainResult = toUpperCaseChain.toUpperCase(); 
+document.write(`donde estoy : ${toLowerCaseChainResult} vs/ `); 
+document.write(`donde quiero estar : ${toUpperCaseChainResult} <br>`); 
 
 
  
