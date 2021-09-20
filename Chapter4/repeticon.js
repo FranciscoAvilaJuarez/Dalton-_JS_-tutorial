@@ -1,6 +1,6 @@
 //array methods -repeticon
 document.write(`
-<b style='color:#FF0000'>____array methods -repeticion-</b> 
+<b style='color:#FF0000'>____array method -repeticion-</b> 
 <br><br>`);
 //  document.write(`'${}'`)
 //  <b>  <br>
