@@ -3,8 +3,7 @@ document.write(`
 <b style='color:#FF0000'>____Array Methods - Repeticion -</b> 
 <br><br>`);
                                                                                 //  document.write(`'${}'`);
-                                                                                //  <>  <br>
-                                                                                //  *filter()
+                                                                                //  <b>  <br>
                                                                                 //  style='color:#FF0000'
 //filter()
 document.write(`
