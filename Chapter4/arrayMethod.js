@@ -62,9 +62,9 @@ document.write(`after using <b>sort()</b> : '${arraiSortResult}' <br>`);
 document.write(`*new array : '${arraiSortResult}'<br><br><br>`);
 
 
-//              *splice() *changes content by deleting or adding
+//              *SPLICE() *changes content by deleting or adding
 //to simply add item with out replacing, is (1, 0) start position one and end at zero.
-document.write(`<b style='color:#FF0000'>-*splice() *changes array by delete/adding with (start/end)</b><br>`);
+document.write(`<b style='color:#FF0000'>-*sPlice() *changes array by delete/adding with (start/end)</b><br>`);
 //array ct starts from ZERO. 
 let arraiSplice = ['<b>frankie</b>', 'pater', 'comunitaris', 'avila', 'paco', '<b>frank</b>'];
 //frankie,pater,comunitaris,avila,paco,frank
