@@ -89,11 +89,35 @@ document.write(`<b style='color:#FF0000'>*El PI number :_${numPi} _'fround versi
 
 //SQRT1_2  *
 let numSQRT1_2 = Math.SQRT1_2; 
-document.write(`<b style='color:#FF0000'> *La representacion flotante mas cercana : '${numSQRT1_2}'</b><br>`);
-
+document.write(`<b style='color:#FF0000'> 
+*La representacion flotante mas cercana : '${numSQRT1_2}'
+</b><br>`);
 
 //SQRT2
-let 
+let numSQRT2 = Math.SQRT2; 
+document.write(`<b style='color:#FF0000'>
+*La raiz cuadrada de dos : '${numSQRT2}' con Math.SQRT2
+</b><br>`);
+let cuadro = 1.4142135623730951 * 1.4142135623730951; 
+document.write(`<b style='color:#FF0000'> *La raiz cuadrada de dos : '${cuadro}'</b><br><br><br>`);
 
 
+//  E  **la constante de euler * base de algoritmos naturales
+let  EulersNumber = Math.E; 
+document.write(`<b style='color:#FF0000'> *e (mathematical constant) base de algoritmos naturales : '${EulersNumber}'</b><br><br>`);
 
+//  LN2  *logaritmo natural de dos
+let numLn2 = Math.LN2; 
+document.write(`<b style='color:#FF0000'> *LN2,  logaritmo natural de dos : '${numLn2}'</b><br><br>`);
+
+//  LN10
+let numLn10 = Math.LN10; 
+document.write(`<b style='color:#FF0000'> *LN10,  logaritmo natural de diez : '${numLn10}'</b><br><br>`);
+
+//LOG2E
+let numLog2e = Math.LOG2E;  
+document.write(`<b style='color:#FF0000'> *LOG2E,  logaritmo de E(euler) con base 2 : '${numLog2e}'</b><br><br>`);
+
+//LOG10E
+let numLog10e = Math.LOG10E; 
+document.write(`<b style='color:#FF0000'> *LOG10E,  logaritmo de E(euler) con base 10 : '${numLog10e}'</b><br><br>`);
