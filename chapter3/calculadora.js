@@ -47,7 +47,7 @@ else if (operacion == 2) {
     
     resta = (num1, num2); 
     //resultado = substract(num1, num2); 
-    alert (` el resultado de tu operacion, ${num1} - ${num2} es igual a ${resta}`);
+    alert (` el resultado de tu operacion, ${parseInt(num1)} - ${parseInt(num2)} es igual a ${resta}`);
 }
 //if going to divide
 else if (operacion == 3) {
@@ -56,10 +56,10 @@ else if (operacion == 3) {
     
     divide = (num1, num2); 
     //resultado = divide(num1, num2); 
-    alert (` el resultado de tu operacion, ${num1} / ${num2} es igual a ${divide}`);
+    alert (` el resultado de tu operacion, ${parseInt(num1)} / ${parseInt(num2)} es igual a ${divide}`);
 }
 //if going to multiply
-multiplicar object; 
+//multiplicar object; 
 else if (operacion == 4 ){
     let num1 = prompt('first number to multiply');
     let num2 = prompt('second number to multiply'); 
