@@ -10,7 +10,7 @@
     else +20 incribirlo and add student to list. 
 */
 const obtenerInformacion = (materia)=>{
-    materias = {
+    const materias = {
         fisica : ['Joel', 'pater', 'comunitaris', 'fer'],
         programacion : ['Marco', 'pater', 'comunitaris', 'paco'],
         logica : ['Neto', 'pater', 'paco', 'maria'],
