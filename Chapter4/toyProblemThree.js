@@ -1,23 +1,25 @@
 let materias = {
         fisica : ['Joel', 'pater', 'comunitaris', 'fer'],
         programacion : ['Marco', 'pater', 'comunitaris', 'paco'],
-        logica : ['Neto', '1pater', '2paco', '3maria'],
+        solidWorks : ['Neto', 'pater', 'paco', 'maria'],
         quimica : ['Juanito', 'pater', 'comunitaris'], 
         math : ['Joel', 'pater', 'comunitaris', 'paco', 'fer'],
 } 
 
 const inscribir = (alumno, materia)=>{
-        personas = materias[materia];//personas = materias[cual course] 
-        personas = personas;//NOW personas tiene SOLO los personas...
+        
+        let personas = materias[materia];//personas = materias[cual course] 
+        
         if (personas.length -1 >= 10){
-                document.write(`lo siento <b>${alumno}</b>, clase : <b>${materia}</b> esta llena <br>`)
+                document.write(`<b style='color:#FF0000'> lo siento ${alumno}, clase : ${materia} esta llena 
+                </b><br>`);
         }else{
                 personas.push(alumno); 
                 if(materia == 'fisica'){
                         materias = {
                                 fisica : personas,
                                 programacion : materias['programacion'],
-                                logica : materias['logica'],
+                                solidWorks : materias['solidWorks'],
                                 quimica : materias['quimica'],
                                 math : materias['math']
                         }
@@ -26,16 +28,16 @@ const inscribir = (alumno, materia)=>{
                         materias = {
                                 fisica : materias['fisica'],
                                 programacion : personas,
-                                logica : materias['logica'],
+                                solidWorks : materias['solidWorks'],
                                 quimica : materias['quimica'], 
                                 math : materias['math']
                         }
                 }
-                else if(materia == 'logica'){
+                else if(materia == 'solidWorks'){
                         materias = {
                                 fisica : materias['fisica'],
                                 programacion : materias['programacion'],
-                                logica : personas,
+                                solidWorks : personas,
                                 quimica : materias['quimica'], 
                                 math : materias['math']
                         }
@@ -44,7 +46,7 @@ const inscribir = (alumno, materia)=>{
                         materias = {
                                 fisica : materias['fisica'],
                                 programacion : materias['programacion'],
-                                logica : materias['logica'],
+                                solidWorks : materias['solidWorks'],
                                 quimica : personas,
                                 math : materias['math']
                         }
@@ -53,7 +55,7 @@ const inscribir = (alumno, materia)=>{
                         materias = {
                                 fisica : materias['fisica'],
                                 programacion : materias['programacion'],
-                                logica : materias['logica'],
+                                solidWorks : materias['solidWorks'],
                                 quimica : materias['quimica'], 
                                 math : personas
                         }
@@ -62,16 +64,15 @@ const inscribir = (alumno, materia)=>{
         }
 }
 
-document.write(materias['logica'] + '<br>'); 
-inscribir('4kris','logica'); 
-inscribir('5kris','logica');
-document.write(materias['logica'] + '<br>'); 
-inscribir('6kris','logica'); 
-inscribir('7kris','logica'); 
-inscribir('8kris','logica'); 
-inscribir('9dalto','logica'); 
-inscribir('10maro','logica'); 
-inscribir('11Maro','logica'); 
-inscribir('12nando','logica'); 
-inscribir('13Nando','logica'); 
-document.write(materias['logica'] + '<br>'); 
+document.write(`${materias['solidWorks']} <br>`); 
+inscribir('kris','solidWorks'); 
+inscribir('Kris','solidWorks');
+document.write(materias['solidWorks'] + '<br>'); 
+inscribir('kriz','solidWorks'); 
+inscribir('xolo','solidWorks'); 
+inscribir('euler','solidWorks'); 
+inscribir('dalto','solidWorks'); 
+inscribir('maro','solidWorks'); 
+inscribir('Maro','solidWorks'); 
+inscribir('nando','solidWorks'); 
+document.write( `final class semester : <b> ${materias['solidWorks']} </b> <br>`); 
