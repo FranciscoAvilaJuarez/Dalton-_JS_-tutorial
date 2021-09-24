@@ -30,6 +30,7 @@ parrafoId = document.querySelector('#contenido')//to select ID we use # as id="c
 document.write('seven : ' + parrafoId + '<br>');//[object HTMLParagraphElement]   this is only returning one element
 //returning : [object HTMLParagraphElement]
 
+
 //querySelectorAll()
 parrafoAllClass = document.querySelectorAll('.todos');
 parrafoAllId = document.querySelectorAll('#todos');
@@ -46,14 +47,17 @@ document.write(`eleven : ${parrafoAllId} <br>`);// also br due to this
 document.write(`twelve : ${parrafoAllId[3]} <br>`)//should show : [object HTMLParagraphElement], nice
 document.write(`thirteen ok : ${parrafoAllId[4]}, yay! <br>`)//should show : undefined, correct
 
+
 //setAttribute() : modifica el valor de un atributo; </p>
 const rangoEtario = document.querySelector('.rangoEtario')//selecting class
 rangoEtario.setAttribute('type', 'text');//changed cosnt from range to text input 
 document.write('fourteen : '+ rangoEtario + '<br>' ); 
 
+
 //getAttribute()    
 let getRangoEtario  = document.querySelector('.rangoEtario'); 
 document.write(`fifteen, this the getAttribute() : ${getRangoEtario.getAttribute('type')}`);//returns : text
+
 
 //removeAttribute()
 let getAttribute = document.querySelector('.rangoEtario')
