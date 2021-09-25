@@ -1,2 +1,2 @@
-# Dalton-_JS_-tutorial
-youtube tutorial on JS
+#_JS_-tutorial
+10 hour JS tutorial from zero to junior 
